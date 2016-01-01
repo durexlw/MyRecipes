@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
-        <%= link_to "MyRecipes", "#", class: "btn btn-lg btn-success", id: "logo" %>
+        <%= link_to "MyRecipes", root_path, class: "btn btn-lg btn-success", id: "logo" %>
         </div>
         <div class="col-sm-5 col-sm-offset-1 col-md-offset-0 col-lg-offset-0">
           <ul class="list-inline">
             <li><%= link_to "Link 1", "#", class: "btn btn-default, btn-warning" %></li>
             <li><%= link_to "Link 1", "#", class: "btn btn-default, btn-warning" %></li>
-            <li><%= link_to "Link 1", "#", class: "btn btn-default, btn-warning" %></li>
+            <li><%= link_to "Add New Recipe", new_recipe_path, class: "btn btn-default, btn-warning" %></li>
           </ul>
         </div>
     </div>

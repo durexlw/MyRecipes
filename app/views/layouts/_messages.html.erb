@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-10">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %> alert-dismissible fade in" role="alert">
+        <%= button_tag(type: 'button', class:"close", data: { dismiss: "alert"}) do %>
+          <%= content_tag(:strong, '&times;'.html_safe) %>
+        <% end %>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+</div>
