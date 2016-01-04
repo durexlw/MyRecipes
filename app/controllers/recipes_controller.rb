@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    #before pagination: @recipes = Recipe.all.sort_by(&:number_of_thumbs_up).reverse #Equivalent of: Recipe.all.sort_by{|likes| likes.number_of_thumbs_up}.reverse
+    @recipes = Recipe.paginate(:page => params[:page], :per_page => 4)
   end
   
   def show
@@ -37,8 +38,23 @@ class RecipesController < ApplicationController
     end
   end
   
+  def like
+    @recipe = Recipe.find(params[:id])
+    @like = @recipe.likes.new(:like => like_params[:like], :chef => Chef.first)
+    if @like.save
+      flash[:success] = "You have amazing taste :)"
+    else
+      flash[:danger] = "Couldn't like it. You can only like/dislike once :("
+    end
+    redirect_to :back
+  end
+  
   private
     def recipe_params
       params.require(:recipe).permit(:name, :summary, :description, :picture)
+    end
+    
+    def like_params
+      params.permit(:like)
     end
 end

@@ -1,0 +1,17 @@
+<% #obj is a variable that gets added as param to this view, it contains the recipe object %>
+<% #like_path is a path that gets added as a param to this view %>
+
+<div class="pull-right">
+  <%= link_to like_path, method: :post do %>
+    <i class="glyphicon glyphicon-thumbs-up"></i>
+  <% end %>
+  &nbsp
+  <%= obj.number_of_thumbs_up %>
+  &nbsp&nbsp
+  <%= link_to like_path, method: :post do %>
+    <i class="glyphicon glyphicon-thumbs-down"></i>
+  <% end %>
+  &nbsp
+  <%= obj.number_of_thumbs_down %>
+  &nbsp&nbsp
+</div>
