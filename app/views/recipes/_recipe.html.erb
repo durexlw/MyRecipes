@@ -1,0 +1,8 @@
+<h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+<p><%= recipe.summary %></p>
+<p>
+  <span class="quiet">created: <%=time_ago_in_words(recipe.created_at) %> ago - </span>
+  <span class="quiet">updated: <%=time_ago_in_words(recipe.updated_at) %> ago</span>
+</p>
+<%= render 'recipes/likes', obj: recipe, like_path: like_recipe_path(recipe, like: true) %>
+

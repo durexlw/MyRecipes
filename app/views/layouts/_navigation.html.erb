@@ -7,8 +7,12 @@
         <div class="col-sm-5 col-sm-offset-1 col-md-offset-0 col-lg-offset-0">
           <ul class="list-inline">
             <li><%= link_to "Link 1", "#", class: "btn btn-default, btn-warning" %></li>
-            <li><%= link_to "Link 1", "#", class: "btn btn-default, btn-warning" %></li>
-            <li><%= link_to "Add New Recipe", new_recipe_path, class: "btn btn-default, btn-warning" %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Add New Recipe", new_recipe_path, class: "btn btn-default, btn-warning" %></li>
+              <li><%= link_to "Log out", logout_path, class: "btn btn-default, btn-warning" %></li>
+            <% else %>
+              <li><%= link_to "Log in", login_path, class: "btn btn-default, btn-warning" %></li>
+            <% end %>
           </ul>
         </div>
     </div>

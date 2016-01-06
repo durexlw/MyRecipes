@@ -3,7 +3,7 @@
   
   <h2>This is the home page for the professional Rails developper</h2>
   
-  <%= link_to "sign up now!", "#", class: "btn btn-lg btn-success" %>
+  <%= link_to "sign up now!", register_path, class: "btn btn-lg btn-success" %>
 </div>
 
 <div class="row">
@@ -16,10 +16,10 @@
   </div>
   <div class="col-lg-4">
     <h2 class="midrow">
-      View recipes as Gues user
+      Sign in to your account
     </h2>
-    <h3 class="left">Browse and view recipes as a guest and Sign up later</h3>
-    <p><%= link_to "Browse recipes Listings", "#", class: "btn btn-warning btn-small" %></p>
+    <h3 class="left">Add/update your recipes, review recipes and much much more!</h3>
+    <p><%= link_to "Sign in to account", login_path, class: "btn btn-warning btn-small" %></p>
   </div>
   <div class="col-lg-4">
     <h2 class="midrow">
